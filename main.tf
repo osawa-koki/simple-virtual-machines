@@ -8,7 +8,7 @@ module "network" {
 
   project_name = var.project_name
   resource_group = {
-    name = azurerm_resource_group.my_rg.name
+    name     = azurerm_resource_group.my_rg.name
     location = azurerm_resource_group.my_rg.location
   }
 }
@@ -16,10 +16,10 @@ module "network" {
 module "compute" {
   source = "./modules/compute"
 
-  project_name = var.project_name
+  project_name        = var.project_name
   ssh_public_key_path = var.ssh_public_key_path
   resource_group = {
-    name = azurerm_resource_group.my_rg.name
+    name     = azurerm_resource_group.my_rg.name
     location = azurerm_resource_group.my_rg.location
   }
   network_interface_id = module.network.network_interface_id
