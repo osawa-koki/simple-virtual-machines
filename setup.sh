@@ -1,9 +1,5 @@
 #!/bin/bash
 
-source .env
-
-# -----
-
 CODE_BLOCK="\`\`\`"
 
 # -----
@@ -15,6 +11,19 @@ else
   cp .env.example .env
   echo ".env created."
   echo "Please edit .env."
+  read -p "Press Enter when you finish editing..."
+fi
+echo ""
+
+source .env
+
+if [ -f .tfbackend ]; then
+  echo ".tfbackend already exists."
+else
+  echo "Creating .tfbackend..."
+  cp .tfbackend.example .tfbackend
+  echo ".tfbackend created."
+  echo "Please edit .tfbackend."
   read -p "Press Enter when you finish editing..."
 fi
 echo ""
@@ -70,15 +79,5 @@ subscription_id=$(az account show --query id --output json | jq -r .)
 export SUBSCRIPTION_ID=$subscription_id
 echo "Subscription id: $subscription_id"
 echo ""
-
-echo "Please add subscription_id to terraform.tfvars."
-echo ""
-echo "${CODE_BLOCK}terraform.tfvars"
-echo "..."
-tail -n 3 terraform.tfvars
-echo -e "\033[32m+ subscription_id = \"$subscription_id\"\033[0m"
-echo "${CODE_BLOCK}"
-echo ""
-read -p "Press Enter when you finish editing..."
 
 echo "Done."
