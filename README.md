@@ -18,8 +18,8 @@ DevContainerに入り、以下のコマンドを実行します。
 gh auth login
 
 source ./setup.sh
-./az_setup.sh
-./tf_setup.sh
+source ./az_setup.sh
+source ./tf_setup.sh
 ```
 
 リソースのプロビジョニングを行います。  
