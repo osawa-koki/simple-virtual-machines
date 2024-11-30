@@ -16,7 +16,7 @@ module "network" {
 module "compute" {
   source = "./modules/compute"
 
-  project_name = var.project_name
+  project_name   = var.project_name
   ssh_public_key = var.ssh_public_key
   resource_group = {
     name     = azurerm_resource_group.my_rg.name
