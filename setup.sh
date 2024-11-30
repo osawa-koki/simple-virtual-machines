@@ -50,12 +50,12 @@ else
     echo "ssh key path (private): $SSH_PRIVATE_KEY_PATH"
     echo "ssh key path (public): $SSH_PRIVATE_KEY_PATH.pub"
 
-    echo "Please add ssh_public_key_path to terraform.tfvars."
+    echo "Please add ssh_public_key to terraform.tfvars."
     echo ""
     echo "${CODE_BLOCK}terraform.tfvars"
     echo "..."
     tail -n 3 terraform.tfvars
-    echo -e "\033[32m+ ssh_public_key_path = \"$SSH_PRIVATE_KEY_PATH.pub\"\033[0m"
+    echo -e "\033[32m+ ssh_public_key = \"$(cat $SSH_PRIVATE_KEY_PATH.pub)\"\033[0m"
     echo "${CODE_BLOCK}"
     echo ""
     read -p "Press Enter when you finish editing..."
