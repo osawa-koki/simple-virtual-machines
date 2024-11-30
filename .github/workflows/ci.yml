@@ -15,14 +15,10 @@ jobs:
     - uses: azure/login@v2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Extract Azure Credentials
-      run: |
-        echo "${{ secrets.AZURE_CREDENTIALS }}" | jq -r '.clientId' | awk '{print "ARM_CLIENT_ID="$1}' >> $GITHUB_ENV
-        echo "${{ secrets.AZURE_CREDENTIALS }}" | jq -r '.clientSecret' | awk '{print "ARM_CLIENT_SECRET="$1}' >> $GITHUB_ENV
-        echo "${{ secrets.AZURE_CREDENTIALS }}" | jq -r '.tenantId' | awk '{print "ARM_TENANT_ID="$1}' >> $GITHUB_ENV
-        echo "${{ secrets.AZURE_CREDENTIALS }}" | jq -r '.subscriptionId' | awk '{print "ARM_SUBSCRIPTION_ID="$1}' >> $GITHUB_ENV
     - name: Create .tfbackend
       run: echo '${{ secrets.TF_BACKEND }}' > .tfbackend
+    - name: Create .tfvars
+      run: echo '${{ secrets.TF_VARS }}' > terraform.tfvars
     - name: Terraform Init
       run: terraform init -backend-config=.tfbackend
     - name: Terraform Format
