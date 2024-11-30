@@ -5,6 +5,7 @@
 ## プロビジョニング方法
 
 `.env.example`をコピーして、`.env`を作成します。  
+`.tfbackend.example`をコピーして、`.tfbackend`を作成します。  
 `.terraform.tfvars.example`をコピーして、`terraform.tfvars`を作成します。  
 中身を適切に編集します。  
 
@@ -14,13 +15,17 @@ DevContainerに入り、以下のコマンドを実行します。
 セットアップスクリプトを実行します。  
 
 ```shell
-./setup.sh
+gh auth login
+
+source ./setup.sh
+./az_setup.sh
+./tf_setup.sh
 ```
 
 リソースのプロビジョニングを行います。  
 
 ```shell
-terraform init
+terraform init -backend-config=.tfbackend
 terraform plan
 terraform apply
 ```

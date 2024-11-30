@@ -1,3 +1,2 @@
-# subscription_id = "<your-subscription-id>"
 project_name = "simple-vm"
 # ssh_public_key_path = "~/.ssh/id_rsa.pub"

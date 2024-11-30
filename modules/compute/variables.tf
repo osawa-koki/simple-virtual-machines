@@ -3,9 +3,9 @@ variable "project_name" {
   description = "Name of the project."
 }
 
-variable "ssh_public_key_path" {
+variable "ssh_public_key" {
   type        = string
-  description = "Path to the SSH public key."
+  description = "SSH public key."
 }
 
 variable "network_interface_id" {

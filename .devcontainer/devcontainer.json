@@ -21,7 +21,7 @@
   "forwardPorts": [],
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": "cat /etc/os-release && terraform --version && chmod +x ./setup.sh && chmod +x ./connect.sh",
+  "postCreateCommand": "cat /etc/os-release && terraform --version && chmod +x ./setup.sh && chmod +x ./connect.sh && chmod +x ./az_setup.sh && ./az_setup.sh",
 
   // Configure tool-specific properties.
   "customizations": {
