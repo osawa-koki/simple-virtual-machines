@@ -2,6 +2,10 @@
 
 🫓🫓🫓 Azureで仮想マシンを作成してみる！  
 
+[![ci](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/ci.yml/badge.svg)](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/ci.yml)
+[![cd](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/cd.yml/badge.svg)](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/cd.yml)
+[![Dependabot Updates](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/osawa-koki/simple-virtual-machines/actions/workflows/dependabot/dependabot-updates)
+
 ![成果物](./fruit.gif)  
 
 ## プロビジョニング方法
