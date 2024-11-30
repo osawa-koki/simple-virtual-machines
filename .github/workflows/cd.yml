@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push:
     tags: [ v-* ]
-    branches: [ issues/15 ] # TODO: マージされたら削除
 
 jobs:
   cd:
