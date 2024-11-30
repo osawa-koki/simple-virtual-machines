@@ -1,3 +1,18 @@
+variable "client_id" {
+  type        = string
+  description = "Azure client id."
+}
+
+variable "client_secret" {
+  type        = string
+  description = "Azure client secret."
+}
+
+variable "tenant_id" {
+  type        = string
+  description = "Azure tenant id."
+}
+
 variable "subscription_id" {
   type        = string
   description = "Azure subscription id."
@@ -9,7 +24,7 @@ variable "project_name" {
   description = "Name of the project."
 }
 
-variable "ssh_public_key_path" {
+variable "ssh_public_key" {
   type        = string
-  description = "Path to the public key."
+  description = "SSH public key."
 }
