@@ -16,8 +16,6 @@ else
   echo ".env created."
   echo "Please edit .env."
   read -p "Press Enter when you finish editing..."
-else
-  echo ".env already exists."
 fi
 echo ""
 
@@ -69,6 +67,7 @@ echo ""
 
 echo "Getting subscription id..."
 subscription_id=$(az account show --query id --output json | jq -r .)
+export SUBSCRIPTION_ID=$subscription_id
 echo "Subscription id: $subscription_id"
 echo ""
 
