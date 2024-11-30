@@ -11,10 +11,15 @@ client_id=$(echo "$json_response" | jq -r '.appId')
 client_secret=$(echo "$json_response" | jq -r '.password')
 tenant_id=$(echo "$json_response" | jq -r '.tenant')
 
-echo "export ARM_SUBSCRIPTION_ID=${SUBSCRIPTION_ID}"
-echo "export ARM_TENANT_ID=${tenant_id}"
-echo "export ARM_CLIENT_ID=${client_id}"
-echo "export ARM_CLIENT_SECRET=${client_secret}"
+echo "subscription_id: $SUBSCRIPTION_ID"
+echo "client_id: $client_id"
+echo "client_secret: $client_secret"
+echo "tenant_id: $tenant_id"
+
+export ARM_SUBSCRIPTION_ID=${SUBSCRIPTION_ID}
+export ARM_TENANT_ID=${tenant_id}
+export ARM_CLIENT_ID=${client_id}
+export ARM_CLIENT_SECRET=${client_secret}
 
 echo "Do you want to set these secrets in GitHub repository settings? (y/n)"
 read answer
